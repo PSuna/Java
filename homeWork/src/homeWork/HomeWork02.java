@@ -81,12 +81,14 @@ public class HomeWork02 {
 		
 		System.out.println("======== 4번 문제 ========");
 		
-		for(int i = 1 ; i <= 5; i++) {
-			for(int j =0; j<5-i; j++) {
-				System.out.print(" ");
+		for(int i = 0 ; i < 5; i++) {
+			for(int j = 1 ; j <= 5; j++) {
+				if(j < 5-i ) {
+					System.out.print(" ");
+				}else {
+					System.out.print("*");
+				}
 			}
-			
-				System.out.print("*");
 			System.out.println();
 		}
 		
@@ -107,15 +109,15 @@ public class HomeWork02 {
 		// 2 X 1 = 2
 		// 2 X 2 = 4
 		// 2 X 3 = 6
-		scanner.nextLine();
-		System.out.print("m을 입력하세요> ");
+		System.out.println("======== 5번 문제 ========");
+		scanner.nextLine(); // 3번문제에서 값을 scanner.next();로 받아서 엔터가 남아있으므로 없애기위해 사용
+		System.out.print("m단을 입력하세요> ");
 		int m = Integer.parseInt(scanner.nextLine());
-		System.out.print("n을 입력하세요> ");
+		System.out.print("n번째를 입력하세요> ");
 		int n = Integer.parseInt(scanner.nextLine());
 		
 		for(int i = 1; i<=n; i++) {
-			System.out.println(m + "*" + i + "=" + (m*i));
-
+			System.out.println(m + " X " + i + " = " + (m*i));
 		}
 	}
 }
