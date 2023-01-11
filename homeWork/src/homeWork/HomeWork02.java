@@ -119,5 +119,13 @@ public class HomeWork02 {
 		for(int i = 1; i<=n; i++) {
 			System.out.println(m + " X " + i + " = " + (m*i));
 		}
+		
+		System.out.println("======== Gugu 문제 ========");
+		for(int i = 1; i <= 9; i++) {
+			for(int j = 2; j <=5; j++) {
+				System.out.print(j + " X " + i + " = " + (j*i) + "\t");
+			}
+			System.out.println();
+		}
 	}
 }
