@@ -83,16 +83,16 @@ public class Application {
 				int max = 0;
 				int min = 0;
 				for(int i = 0; i< stdAry.length; i++) {
-							max = stdAry[i].kor;
-							min = stdAry[i].kor;
+							max = stdAry[i].kor; // 국어
+							min = stdAry[i].kor; // 국어
 						
-						if(stdAry[i].eng < stdAry[i].math) { // 영어가 수학보다 클때
-							if(max < stdAry[i].math) { // 국어와 수학을 비교
-								max = stdAry[i].math;
+						if(stdAry[i].eng < stdAry[i].math) { // 수학이 영어보다 클때
+							if(max < stdAry[i].math) { // 국어와 수학을 비교 : 수학이 더클때
+								max = stdAry[i].math; // 수학이 max가됨
 							}
-						}else {
-							if(max < stdAry[i].eng) { // 영어가 더 클때
-								max = stdAry[i].eng; // 국어와 영어를 비교
+						}else { // 영어가 수학보다 클때
+							if(max < stdAry[i].eng) { // 국어와 영어를 비교 : 영어가 더 클때
+								max = stdAry[i].eng; // 영어가 max가됨
 							}
 						}
 						System.out.println(stdAry[i].name + " 최고 성적 : " + max);		
