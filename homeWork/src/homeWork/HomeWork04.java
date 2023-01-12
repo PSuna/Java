@@ -20,7 +20,6 @@ public class HomeWork04 {
 		Scanner sc = new Scanner(System.in);
 		Product[] product = null;
 		int count = 0;
-		int sum = 0;
 		int max = 0;
 		int maxIndex = 0;
 		while(true) {
@@ -53,21 +52,22 @@ public class HomeWork04 {
 			}else if(menu == 4) {
 				//최고 가격을 가지는 제품과 해당 제품을 제외한 제품들의 총합
 				//분석기능은 최고 가격을 가지는 제품과 해당 제품을 제외한 제품들의 총합을 구합니다.
+				int sum = 0; // 총합
+				max = product[0].price; // 초기화
 				for(int i = 0 ; i < product.length; i++) {
-					max = product[i].price;
 					if(max < product[i].price) {
 						max = product[i].price;
 						maxIndex = i;
 					}
 				}
-				System.out.println("최고가격을 가지는 제품" + product[maxIndex].proName +"가격: " + max);
+				System.out.println("최고가격을 가지는 제품명: " + product[maxIndex].proName +", 가격: " + max);
 				
 				for(int i = 0; i < product.length; i++) {
-					if(i == maxIndex) {
-						continue;
-					}else {
-					sum += product[i].price;
+					if(i == maxIndex) { // 최고가격을 가지는 제품의 인덱스라면
+						continue;  // 건너뛰기
 					}
+					sum += product[i].price;
+					
 				}
 				System.out.println("최고 가격을 가지는 제품을 제외한 제품들의 총합 : " + sum);
 				
@@ -76,10 +76,6 @@ public class HomeWork04 {
 				break;
 			}
 		}
-		
-		
-		
-
 	}
 
 }
