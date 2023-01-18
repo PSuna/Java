@@ -48,8 +48,10 @@ public class MainMethod {
 			}else if(choiceNo == 0) {
 				// 게임체인지
 				if(startGame == 1) {
+					startGame = 2;
 					game = new ArcadeGame();
 				}else if(startGame == 2) {
+					startGame = 1;
 					game = new RPGgame();
 				}
 			}else if(choiceNo == 9) {
