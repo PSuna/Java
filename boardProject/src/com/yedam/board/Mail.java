@@ -13,7 +13,8 @@ public class Mail {
     String FROMNAME = "박선아";
     String TO = "xkq3355@gmail.com"; // 받는사람
     String SMTP_USERNAME = "xkq3355@naver.com"; // 보낸사람
-    String SMTP_PASSWORD = "***"; // 보낸사람 비밀번호 입력해줘야함
+    
+    String SMTP_PASSWORD = "**변경하기**"; // 보낸사람 비밀번호 입력해줘야함
     
     String HOST = "smtp.naver.com";
     int PORT = 587;

@@ -34,30 +34,9 @@ public class Main {
 		System.out.println("|\t\t  \t\t\t|");
 		System.out.println("+---------------------------------------+");
 		
-		System.out.print("메뉴를 선택해 주세요>> ");
-		Scanner sc = new Scanner(System.in);
-		int menu = sc.nextInt();
-		boolean flag = true;
 		
 		
-		while(flag) {
-			switch(menu) {
-				case 1:
-					System.out.println("회원가입");
-					flag = false;
-					break;
-				case 2:
-					System.out.println("로그인");
-					flag = false;
-					break;
-				case 3:
-					System.out.println("프로그램 종료");
-					flag = false;
-					break;
-				}
-		}
-		System.out.print("\033[H\033[2J");
-        System.out.flush();
+		
 	}
 
 }

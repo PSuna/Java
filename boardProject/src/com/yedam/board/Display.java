@@ -4,8 +4,55 @@ import java.util.Scanner;
 
 public class Display {
 
+
+    public static int primeEquation(int x)
+    {
+        return (x*x) - x + 41;
+    }
+
+    public static String formatRow(String str)
+    {
+        return str;
+    }
+
+    public static String formatDiv(String str)
+    {
+        return str;
+    }
+    
 	public static void main(String[] args) {
-	
+		
+		String header = "";
+        header += "+-----+-------------+----------+----------+\n";
+        header += "|  x  | x² - x + 41 | Is Prime | Is Prime |\n";
+        header += "+-----+-------------+----------+----------+\n";
+        System.out.print(header);
+
+        for (int x = 0; x <= 41; x++)
+        {
+            int y = primeEquation(x);
+            String str1 = String.format("| %3d | %11s | %8d | %8d |", x, "fdfsdfdsfsf", 2,4);
+            String str2 = String.format("| %3d | %11s | %8d | %8d |", x, "fsdfsf", 2,4);
+            System.out.println(str1);
+            System.out.println(str2);
+        }
+
+        System.out.println("+-----+-------------+----------+----------+");
+
+		
+		String leftAlignFormat = "| %-15s | %-4d | %-4d |%n";
+
+		System.out.format("+-----------------+------+------+%n");
+		System.out.format("| Column name     | ID   | ID   |%n");
+		System.out.format("+-----------------+------+------+%n");
+		
+		for (int i = 0; i < 5; i++) {
+		    System.out.format(leftAlignFormat, "some data", i, i );
+		}
+		System.out.format("+-----------------+------+------+%n");
+		
+		
+		
 		System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
 		System.out.println("════ ⋆★⋆ ════");
 		System.out.println("╔═══════╗\r\n"

@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class MemberDAO {
 
+	// 필드
 	// 2. Connection 객체. db연결 쿼리실행 or 실행결과 통로
 	Connection conn; // db연결
 	Statement stmt = null; // 쿼리를 해석해서 실행하고 처리결과를 받아오는 객체
@@ -17,13 +18,14 @@ public class MemberDAO {
 	ResultSet rs = null; // 쿼리 실행결과를 받아오는 객체 (★★ Set 컬렉션임)
 
 	String url = "jdbc:oracle:thin:@localhost:1521:xe"; // @ip:포트:id(오라클db)
-	String user = "hr";
-	String pass = "hr";
+	String user = "dev";
+	String pass = "dev";
 
 	String sql;
-	String yesNo = null;
 	Scanner sc = new Scanner(System.in);
 
+	
+	// 메소드
 	public void connect() {
 		// jdbc driver 가져오기 => 정상
 		try {
@@ -51,8 +53,8 @@ public class MemberDAO {
 			return r;
 			
 		} catch (SQLException e) {
-			System.out.println("[이미 존재하는 ID입니다.]");
-			//printStackTrace();
+			System.out.println("━━━━━━━━━━ [이미 존재하는 ID입니다.] ━━━━━━━━━━");
+			//e.printStackTrace();
 		}
 		return r; // insert된게 없다면 0반환
 	}
@@ -72,9 +74,9 @@ public class MemberDAO {
 				if(id.equals(rs.getString("user_id")) && password.equals(rs.getString("user_password"))){ 
 					return true;
 				}else { // 아이디와 비밀번호가 틀리다면
-					System.out.println("아이디와 비밀번호가 다릅니다.");
+					System.out.println("━━━━━━━━━━ [아이디와 비밀번호가 다릅니다.] ━━━━━━━━━━");
 					System.out.print("이메일로 패스워드를 받아보시겠습니까?(Y/N)>> ");
-					yesNo = sc.nextLine();
+					String yesNo = sc.nextLine();
 					switch(yesNo) {
 						case "y":
 						case "Y":
@@ -93,7 +95,7 @@ public class MemberDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("존재하지않는 계정입니다. 메인페이지로 이동합니다.");
+		System.out.println("━━━━━━━━━━ [존재하지않는 계정입니다. 메인페이지로 이동합니다.] ━━━━━━━━━━");
 		return false; // 조회되는 계정이 없다면
 	}
 
