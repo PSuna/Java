@@ -23,3 +23,10 @@
 hs_err_pid*
 
 /bin/
+
+/.metadata/
+/.recommenders/
+*.project
+*.classpath
+*.DS_Store
+*.prefs
